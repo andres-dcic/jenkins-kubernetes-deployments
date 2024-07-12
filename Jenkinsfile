@@ -37,15 +37,16 @@ pipeline {
           //}
         }
       }
-    }
 
-    stage('Deploying App to Kubernetes') {
+        stage('Deploying App to Kubernetes') {
       steps {
         echo 'Deploying K8s'
         //script {
         //  kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
         }
       }
+    }
+ 
     }
 
  
