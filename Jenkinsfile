@@ -40,9 +40,7 @@ pipeline {
 
     stage('Deploying App to Kubernetes') {
       steps {
-        
         script {
-            echo 'Deploying K8s'
             kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
         }
       }
