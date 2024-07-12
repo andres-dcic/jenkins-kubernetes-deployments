@@ -36,9 +36,9 @@ pipeline {
          //   dockerImage.push("latest")
           //}
         }
-      }
+    }
 
-        stage('Deploying App to Kubernetes') {
+    stage('Deploying App to Kubernetes') {
       steps {
         
         script {
@@ -49,5 +49,6 @@ pipeline {
     }
  
     }
+}
 
  
