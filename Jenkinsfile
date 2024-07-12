@@ -45,7 +45,7 @@ pipeline {
             //kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
             withCredentials([file(credentialsId: env.KUBECONFIG_CREDENTIAL_ID, variable: 'KUBECONFIG')]) {
             sh '''
-             kubectl get pod 
+             kubectl apply -f service.yaml
             '''}
         }
       }
