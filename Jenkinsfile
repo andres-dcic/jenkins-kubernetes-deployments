@@ -10,13 +10,15 @@ pipeline {
   stages {
 
     stage('Checkout Source') {
-     // steps {
-     //   git 'https://github.com/Bravinsimiyu/jenkins-kubernetes-deployment.git'
-      //}
+      steps {
+        echo 'Chechout Source'
+       //   git 'https://github.com/Bravinsimiyu/jenkins-kubernetes-deployment.git'
+      }
     }
 
     stage('Build image') {
       steps{
+        echo 'Checkout Image'
        // script {
        //   dockerImage = docker.build dockerimagename
        // }
@@ -28,16 +30,18 @@ pipeline {
                registryCredential = 'dockerhub-credentials'
            }
       steps{
-        script {
+          echo 'Pushing Image'
+        //script {
          // docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
          //   dockerImage.push("latest")
-          }
+          //}
         }
       }
     }
 
     stage('Deploying App to Kubernetes') {
       steps {
+        echo 'Deploying K8s'
         //script {
         //  kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
         }
