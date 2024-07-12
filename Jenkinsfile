@@ -46,7 +46,7 @@ pipeline {
             withCredentials([file(credentialsId: env.KUBECONFIG_CREDENTIAL_ID, variable: 'KUBECONFIG')]) {
             sh '''
              kubectl get pod 
-            '''
+            '''}
         }
       }
     }
