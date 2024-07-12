@@ -3,6 +3,7 @@ pipeline {
   environment {
     dockerimagename = "andr35/nodeejemplo.v1"
     dockerImage = ""
+    KUBECONFIG_CREDENTIAL_ID = 'myconfigk8s'
   }
 
   agent any
@@ -41,7 +42,11 @@ pipeline {
     stage('Deploying App to Kubernetes') {
       steps {
         script {
-            kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
+            //kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
+            withCredentials([file(credentialsId: env.KUBECONFIG_CREDENTIAL_ID, variable: 'KUBECONFIG')]) {
+            sh '''
+             kubectl get pod 
+            '''
         }
       }
     }
