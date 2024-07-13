@@ -3,7 +3,7 @@ pipeline {
   environment {
     dockerimagename = "andr35/nodeejemplo.v1"
     dockerImage = ""
-    KUBECONFIG_CREDENTIAL_ID = 'myconfigk8s'
+    KUBECONFIG_CREDENTIAL_ID = "myconfigk8s"
   }
 
   agent any
@@ -43,7 +43,7 @@ pipeline {
       steps {
         script {
            // kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
-           withKubeConfig([credentialsId: 'KUBECONFIG_CREDENTIAL_ID']) {
+           withKubeConfig([credentialsId: 'myconfigk8s']) {
                     sh 'kubectl get pod'
                 }
         }
