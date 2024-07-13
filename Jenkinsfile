@@ -42,8 +42,10 @@ pipeline {
     stage('Deploying App to Kubernetes') {
       steps {
         script {
-            kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
-            
+           // kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
+           withKubeConfig([credentialsId: 'KUBECONFIG_CREDENTIAL_ID']) {
+                    sh 'kubectl get pod'
+                }
         }
       }
     }
