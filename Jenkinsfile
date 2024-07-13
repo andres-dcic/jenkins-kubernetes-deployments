@@ -44,7 +44,7 @@ pipeline {
         script {
            // kubernetesDeploy(configs: "deployment.yaml", "service.yaml")
            withKubeConfig([credentialsId: 'myconfigk8s']) {
-                    sh 'kubectl get pod'
+                    sh "kubectl get pod"
                 }
         }
       }
