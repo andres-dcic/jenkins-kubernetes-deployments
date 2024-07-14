@@ -53,24 +53,17 @@ pipeline {
       //}
    // }
      stage("SSH Into k8s Server") {
-       def remote = [:]
-         remote.name = 'K8S master'
-       remote.host = '192.168.56.10'
-        remote.user = 'vagrant'
-        remote.password = 'vagrant'
-        remote.allowAnyHosts = true
-
-        stage('Put deployment.yaml onto k8smaster') {
-            sshPut remote: remote, from: 'deployment.yaml', into: '.'
+          sshagent (['ssh-agent']){
+            sh 'ls -l'
+          }
+      
         }
 
         //stage('Deploy spring boot') {
         //  sshCommand remote: remote, command: "kubectl apply -f k8s-spring-boot-deployment.yml"
        // }
     }
-
-
-   }
+   
 }
 
  
