@@ -53,17 +53,17 @@ pipeline {
       //}
    // }
      stage("SSH Into k8s Server") {
+        steps {
           sshagent (['ssh-agent']){
-            sh 'ls -l'
+            sh 'ssh -tt -o StrictHostKeyChecking=no vagrant@192.168.56.10 ls'
           }
-      
         }
 
         //stage('Deploy spring boot') {
         //  sshCommand remote: remote, command: "kubectl apply -f k8s-spring-boot-deployment.yml"
        // }
     }
-   
+  
 }
-
+}
  
