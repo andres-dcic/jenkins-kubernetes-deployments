@@ -56,7 +56,9 @@ pipeline {
         steps {
           sshagent (['ssh-agent']){
             //sh 'ssh -tt -o StrictHostKeyChecking=no vagrant@192.168.56.9 kubectl get nodes'
-            sh 'scp -tt -o StrictHostKeyChecking=no service.yaml vagrant@192.168.56.9:/vagrant/react/'
+            sh '''
+            scp -tt -o StrictHostKeyChecking=no service.yaml "vagrant@192.168.56.9:/vagrant/react/"
+            '''
           }
         }
 
