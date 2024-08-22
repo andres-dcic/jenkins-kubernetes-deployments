@@ -13,16 +13,16 @@ pipeline {
     stage('Checkout Source') {
       steps {
         echo 'Chechout Source'
-       //   git 'https://github.com/Bravinsimiyu/jenkins-kubernetes-deployment.git'
+         git 'https://github.com/Bravinsimiyu/jenkins-kubernetes-deployment.git'
       }
     }
 
     stage('Build image') {
       steps{
         echo 'Checkout Image'
-       // script {
-       //   dockerImage = docker.build dockerimagename
-       // }
+        script {
+          dockerImage = docker.build dockerimagename
+        }
       }
     }
 
