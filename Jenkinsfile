@@ -32,10 +32,10 @@ pipeline {
            }
       steps{
           echo 'Pushing Image'
-        //script {
-         // docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-         //   dockerImage.push("latest")
-          //}
+        script {
+          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
+            dockerImage.push("latest")
+          }
         }
     }
 
