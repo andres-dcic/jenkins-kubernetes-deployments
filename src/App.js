@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Aprendiendo practicas de seguridad como DevSecOps 2024
+          Pipeline seguro DevSecOps 2024
         </a>
       </header>
     </div>
