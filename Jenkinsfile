@@ -13,7 +13,7 @@ pipeline {
     stage('Checkout Source') {
       steps {
         echo 'Checkout Source'
-         git url 'https://github.com/andres-dcic/jenkins-kubernetes-deployments.git', branch: 'main'
+         git url: 'https://github.com/andres-dcic/jenkins-kubernetes-deployments.git', branch: 'main'
           }
     }
 
