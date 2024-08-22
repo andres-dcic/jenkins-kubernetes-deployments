@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Pipeline seguro DevSecOps 2024 testing
+          Pipeline seguro DevSecOps 2024
         </a>
       </header>
     </div>
