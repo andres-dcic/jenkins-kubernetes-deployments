@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    dockerimagename = "andr35/nodeejemplo.v1"
+    dockerimagename = "andr35/nodeejemplo"
     dockerImage = ""
     KUBECONFIG_CREDENTIAL_ID = "myconfigk8s"
   }
